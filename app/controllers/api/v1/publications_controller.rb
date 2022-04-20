@@ -33,7 +33,7 @@ module Api
       def destroy
         context = Publications::Destroy.call(publication: @publication)
         if context.success?
-          head 200
+          head :ok
         else
           render json: { errors: context.publication.errors.full_messages }, status: context.status
         end
