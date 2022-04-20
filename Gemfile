@@ -13,7 +13,17 @@ gem "pg", "~> 1.1"
 gem "puma", "~> 5.0"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
-# gem "jbuilder"
+gem "jbuilder"
+
+#Interactors are used to encapsulate your application's business logic. Each interactor represents one thing that your application does. (context)
+gem "interactor", "~> 3.0"
+
+#nteractor::Contracts is an extension to the interactor gem 
+#that gives you the ability to specify the expectations (expected inputs) and promises (expected outputs) of your interactors.
+gem 'interactor-contracts'
+
+# Gem to access AWS
+gem 'aws-sdk-s3', '~> 1.111', '>= 1.111.1'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -39,6 +49,12 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails'
+  gem 'faker', '>= 2.13.0'
+  gem 'rspec-rails', '~> 5.0.2'
+  gem 'shoulda-matchers', '>= 4.3.0'
+  gem 'active_storage_validations'
 end
 
 group :development do

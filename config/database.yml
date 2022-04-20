@@ -7,7 +7,7 @@ default: &default
 
 development:
   <<: *default
-  database: catalogo_filmes_dev
+  database: news_dev
   host: "postgres"
   port: 5432
   username: "postgres"
@@ -16,7 +16,7 @@ development:
 
 test:
   <<: *default
-  database: catalogo_filmes_test
+  database: news_test
   host: "postgres"
   port: 5432
   username: "postgres"
