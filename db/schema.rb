@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_20_165410) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_25_121043) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -29,4 +29,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_20_165410) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "publications_categories", force: :cascade do |t|
+    t.integer "publication_id"
+    t.integer "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "publications_categories", "categories", name: "category_fk"
+  add_foreign_key "publications_categories", "publications", column: "publication_id", name: "publication_fk"
 end
