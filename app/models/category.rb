@@ -1,4 +1,4 @@
 class Category < ApplicationRecord
   # Validations
-  validates :name, presence: true, uniquiness: { case_sensistive: false }
+  validates :name, presence: true, uniqueness: { case_sensitive: false }
 end

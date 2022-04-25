@@ -1,14 +1,16 @@
 module Api
   module V1
     class CategoriesController < ApplicationController
+      before_action :set_category, only: %i[show update destroy]
+
       def index
-        @categories = Category.all
+        @categories = Category.order(name: :asc)
       end
 
       def show; end
 
       def create
-        context = Category::Create.call(category_params: category_params)
+        context = Categories::Create.call(category_params: category_params)
         @category = context.category
         if context.success?
           render :show, status: :created
@@ -18,8 +20,8 @@ module Api
       end
 
       def update
-        context = Category::Update.call(category: @category,
-                                        category_params: category_params)
+        context = Categories::Update.call(category: @category,
+                                          category_params: category_params)
         @category = context.category
         if context.success?
           render :show, status: :ok
@@ -29,7 +31,7 @@ module Api
       end
 
       def destroy
-        context = Category::Destroy.call(category: @category)
+        context = Categories::Destroy.call(category: @category)
         if context.success?
           head :ok
         else
