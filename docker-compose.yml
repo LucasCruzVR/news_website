@@ -14,7 +14,7 @@ services:
       AWS_ACCESS_KEY_ID: 
       AWS_SECRET_ACCESS_KEY:
   postgres:
-    container_name: container_db
+    container_name: container_db2
     image: postgres:14.0
     restart: always
     environment:
