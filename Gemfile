@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "2.7.4"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.0.2", ">= 7.0.2.3"
+gem "rails", "~> 6.1.0"
 
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
@@ -24,6 +24,10 @@ gem 'interactor-contracts'
 
 # Gem to access AWS
 gem 'aws-sdk-s3', '~> 1.111', '>= 1.111.1'
+
+gem 'devise'
+
+gem 'simple_token_authentication', '~> 1.0' # see semver.org
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

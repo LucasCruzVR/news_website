@@ -4,6 +4,7 @@ module Api
       before_action :set_category, only: %i[show update destroy]
 
       def index
+        byebug
         @categories = Category.order(name: :asc)
       end
 

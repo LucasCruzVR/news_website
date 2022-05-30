@@ -1,4 +1,4 @@
-class CreatePublicationsCategories < ActiveRecord::Migration[7.0]
+class CreatePublicationsCategories < ActiveRecord::Migration[6.1]
   def change
     create_table :publications_categories do |t|
       t.integer :publication_id

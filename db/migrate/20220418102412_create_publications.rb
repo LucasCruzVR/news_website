@@ -1,4 +1,4 @@
-class CreatePublications < ActiveRecord::Migration[7.0]
+class CreatePublications < ActiveRecord::Migration[6.1]
   def change
     create_table :publications, comment: 'News from Website' do |t|
       t.string :title, null: false, comment: 'News title'
