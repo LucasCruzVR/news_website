@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :publications
       resources :categories
-      resources :sessions, only: %i[create destroy]
+      resource :sessions, only: %i[create destroy]
     end
   end
 end
